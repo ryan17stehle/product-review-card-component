@@ -1,0 +1,137 @@
+/* Variables */
+:root {
+    --dark-cyan: hsl(158, 36%, 37%);
+    --dark-cyan-hover: hsl(158, 37%, 17%);
+    --cream: hsl(30, 38%, 92%);
+    --very-dark-blue: hsl(212, 21%, 14%);
+    --dark-grayish-blue: hsl(228, 12%, 48%);
+    --white: hsl(0, 0%, 100%);
+    --body-font-size: 14px;
+    --ff-fraunces: 'Fraunces', serif;
+    --ff-montserrat: 'Montserrat', sans-serif;
+}
+
+/* Reset Rules */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* General Rules */
+body {
+    background-color: var(--cream);
+    min-height: 100vh;
+    padding: 2vh 2vw;
+}
+
+img {
+    max-width: 100%;
+}
+
+/* Typography  & Colors*/
+body, h3 {
+    color: var(--dark-grayish-blue);
+    font-family: var(--ff-montserrat);
+    font-size: var(--body-font-size);
+}
+
+h1, h2 {
+    font-family: var(--ff-fraunces);
+}
+
+.title {
+    color: var(--very-dark-blue);
+}
+
+.price {
+    color: var(--dark-cyan);
+    display: inline-block;
+    padding-right: 1rem;
+}
+
+.discount {
+    text-decoration: line-through;
+}
+
+/* Containers */
+.card-container {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    min-width: 280px;
+    height: 640px;
+}
+
+.bottom-right-container {
+    background-color: var(--white);
+    border-bottom-right-radius: 16px;
+    border-bottom-left-radius: 16px;
+
+    /* flex parent */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    /* flex child */
+    flex-grow: 1;
+
+    border-bottom-right-radius: 16px;
+    padding: 1rem;
+}
+
+/* Button */
+.cart {
+    background-color: var(--dark-cyan);
+    border: none;
+    border-radius: 16px;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    padding: 1rem 2.5rem;
+}
+
+.cart:hover {
+    cursor: pointer;
+    background-color: var(--dark-cyan-hover);
+}
+
+.cart-text {
+    color: var(--white);
+}
+
+/* Image */
+.rounded-corners {
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+}
+
+/* Media Queries */
+@media (600px <= width) {
+    .card-container {
+        flex-direction: row;
+        height: 450px;
+        max-width: 600px;
+    }
+
+    .bottom-right-container {
+        border-top-left-radius: 0px;
+        border-top-right-radius: 16px;
+        border-bottom-right-radius: 16px;
+        min-width: 300px;
+    }
+
+    img {
+        min-height: 100%;
+    }
+
+    .product {
+        min-width: 300px;
+    }
+
+    .rounded-corners {
+        border-top-right-radius: 0px;
+        border-bottom-left-radius: 16px;
+    }
+}
